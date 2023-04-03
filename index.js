@@ -18,7 +18,10 @@ console.log(path.format(path.parse(__filename)));
 console.log(path.isAbsolute(__filename)); 
 console.log(path.isAbsolute('./data.json'))  //it is relative 
 
-
+console.log(path.join("folder1","folder2","folder3"));  //it will joins the argument
+console.log(path.join("/folder4","folder5"));
+console.log(path.join("/folder6","//folder7","../folder8"));
+console.log(path.join("directory name",__dirname,'data.json'));
 // const add=(a,b)=>{
 //     return  a+b;
 // }
