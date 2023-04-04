@@ -1,0 +1,1 @@
+ input.txt make sure that you have written some text so that when we compressed it and then decompressed it we will verify the output.

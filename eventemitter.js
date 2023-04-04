@@ -24,10 +24,33 @@ eventEmitter.on("vehicle",()=>{
 })
 const eventName=eventEmitter.eventNames();
 console.log(eventName);
-const listeners=eventEmitter.listeners('vehicle')
-listeners.forEach(listenername=>console.log(listenername))
+
+eventEmitter.setMaxListeners(2);
+eventEmitter.on("number",()=>{
+  console.log("one");
+})
+eventEmitter.on("number",()=>{
+  console.log("two");
+})
+eventEmitter.on("number",()=>{
+  console.log("three");
+})
+const maxListeners=eventEmitter.getMaxListeners();
+console.log(`${maxListeners}`);
 
 
+//emitter.once()
+eventEmitter.once('wish',(words)=>{
+  console.log(`Hello,${words}`);
+})
+
+eventEmitter.once('wish',(words)=>{
+  console.log(`Hello,${words}`);
+})
+
+eventEmitter.emit('wish',"Welcome")
+
+eventEmitter.emit('wish',"Everybody")
 
 
 
